@@ -29,6 +29,7 @@ export default function Product() {
   const imageRef = useRef<HTMLImageElement>(null);
   const [starChecked, setStarChecked] = useState<number>(0);
   const [activeImage, setActiveImage] = useState<number>(0);
+  const [productCount, setProductCount] = useState(1);
 
   const handleImage = (index: number) => {
     setActiveImage(index);
@@ -102,9 +103,7 @@ export default function Product() {
                   <button
                     key={index}
                     className={`w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer ${
-                      index === activeImage
-                        ? "border border-black"
-                        : ""
+                      index === activeImage ? "border border-black" : ""
                     }`}
                     onClick={() => handleImage(index)}
                   >
@@ -146,11 +145,19 @@ export default function Product() {
             <div>
               <div className="flex items-center gap-4 my-4">
                 <div className="flex items-center justify-between gap-2 border border-gray-300 rounded-full px-4 py-2 w-[170px] h-[50px]">
-                  <button className="cursor-pointer">
+                  <button
+                    className="cursor-pointer"
+                    onClick={() =>
+                      setProductCount((prev) => (prev > 1 ? prev - 1 : prev))
+                    }
+                  >
                     <FiMinus size={18} />
                   </button>
-                  <span>1</span>
-                  <button className="cursor-pointer">
+                  <span>{productCount}</span>
+                  <button
+                    onClick={() => setProductCount((prev) => prev + 1)}
+                    className="cursor-pointer"
+                  >
                     <FiPlus size={18} />
                   </button>
                 </div>
