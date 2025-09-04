@@ -53,8 +53,10 @@ export default function Product() {
     <div className="">
       <div className="max-w-[1200px] mx-auto p-4 pt-8">
         <div className="flex items-center justify-between mb-8">
-          <p>Home / Electronics / 11-inch Tablet Pro 2020 Space Gray</p>
-          <div className="flex items-center gap-4">
+          <p className="hidden lg:block">
+            Home / Electronics / 11-inch Tablet Pro 2020 Space Gray
+          </p>
+          <div className="flex items-center gap-4 w-full justify-between lg:max-w-[200px] max-w-auto">
             <Tooltip>
               <TooltipTrigger asChild>
                 <button className="uppercase flex items-center gap-1 cursor-pointer hover:text-rose-400 transition-all">
@@ -65,7 +67,7 @@ export default function Product() {
                 Lorem ipsum dolor sit.
               </TooltipContent>
             </Tooltip>
-            <span>|</span>
+            <span className="hidden lg:block">|</span>
             <Tooltip>
               <TooltipTrigger asChild>
                 <button className="uppercase flex items-center gap-1 cursor-pointer hover:text-rose-400 transition-all">
@@ -78,24 +80,24 @@ export default function Product() {
             </Tooltip>
           </div>
         </div>
-        <div className="flex items-stretch justify-between gap-8 p-4 mb-10">
-          <div className="flex items-start gap-3">
-            <div className="flex flex-col gap-2">
-              <button className="w-[50px] h-[50px] overflow-hidden bg-white cursor-pointer">
+        <div className="flex items-stretch justify-between gap-8 p-4 mb-10 flex-col lg:flex-row">
+          <div className="flex items-start gap-3 flex-col-reverse md:flex-row">
+            <div className="flex flex-row md:flex-col gap-2">
+              <button className="w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer">
                 <img
                   className="w-full h-full object-cover"
                   src={watchImage}
                   alt="soat rasmi"
                 />
               </button>
-              <button className="w-[50px] h-[50px] overflow-hidden bg-white cursor-pointer">
+              <button className="w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer">
                 <img
                   className="w-full h-full object-cover"
                   src={watchImage}
                   alt="soat rasmi"
                 />
               </button>
-              <button className="w-[50px] h-[50px] overflow-hidden bg-white cursor-pointer">
+              <button className="w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer">
                 <img
                   className="w-full h-full object-cover"
                   src={watchImage}
@@ -104,7 +106,7 @@ export default function Product() {
               </button>
             </div>
             <div
-              className="w-[500px] h-[500px] bg-gray-200 group overflow-hidden cursor-pointer"
+              className="lg:w-[500px] lg:h-[500px] w-full md:h-[600px] bg-gray-200 group overflow-hidden cursor-pointer"
               onMouseMove={handleMove} // Kursor harakatini kuzatish
             >
               <img
@@ -139,7 +141,7 @@ export default function Product() {
                     <FiPlus size={18} />
                   </button>
                 </div>
-                <Button className="bg-[#5817ad] uppercase font-bold rounded-full w-[200px] h-[50px] cursor-pointer">
+                <Button className="bg-[#5817ad] w-[150px] text-xs uppercase font-bold rounded-full sm:w-[200px] h-[50px] cursor-pointer">
                   Add to card
                 </Button>
               </div>
@@ -152,14 +154,23 @@ export default function Product() {
         </div>
         <div className="flex items-start justify-center pt-8 mb-18">
           <Tabs defaultValue="description" className="max-w-[770px] w-full">
-            <TabsList className="flex items-center justify-around">
-              <TabsTrigger value="description" className="text-xl">
+            <TabsList className="flex md:items-center justify-around flex-col md:flex-row gap-4 items-start">
+              <TabsTrigger
+                value="description"
+                className="text-xl border md:border-none px-2 py-1 md:px-0 md:py-0"
+              >
                 Description
               </TabsTrigger>
-              <TabsTrigger value="additional" className="text-xl">
+              <TabsTrigger
+                value="additional"
+                className="text-xl border md:border-none px-2 py-1 md:px-0 md:py-0"
+              >
                 Additional Information
               </TabsTrigger>
-              <TabsTrigger value="reviews" className="text-xl">
+              <TabsTrigger
+                value="reviews"
+                className="text-xl border md:border-none px-2 py-1 md:px-0 md:py-0"
+              >
                 Reviews (2)
               </TabsTrigger>
             </TabsList>
