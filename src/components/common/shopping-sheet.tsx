@@ -7,6 +7,7 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { Button } from "../ui/button";
+import NotificationBadge from "./notification-badge";
 
 export default function ShoppingSheet() {
   return (
@@ -18,9 +19,7 @@ export default function ShoppingSheet() {
         <SheetHeader className="">
           <SheetTitle className="border-b py-6 font-extralight font-mono text-base flex items-center gap-2">
             <p>SHOPPING CART</p>
-            <p className="h-4 w-4 text-sm rounded-full bg-rose-400 text-white flex items-center justify-center">
-              <span>0</span>
-            </p>
+            <NotificationBadge />
           </SheetTitle>
         </SheetHeader>
         <div className="flex items-center justify-center pt-18">
@@ -31,7 +30,9 @@ export default function ShoppingSheet() {
               </div>
               <p>No products in the cart.</p>
             </div>
-            <Button className="bg-[#5817ad] border-none">Continue Shopping</Button>
+            <Button className="bg-[#5817ad] border-none">
+              Continue Shopping
+            </Button>
           </div>
         </div>
       </SheetContent>

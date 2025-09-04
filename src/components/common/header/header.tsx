@@ -18,6 +18,7 @@ import {
 import ShoppingSheet from "../shopping-sheet";
 import SearchDialog from "../search-dialog";
 import HeaderMenuSheet from "../header-menu-sheet";
+import NotificationBadge from "../notification-badge";
 
 export default function Header() {
   return (
@@ -33,13 +34,13 @@ export default function Header() {
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
               {menu.map((item, index) => (
-                <NavigationMenuItem key={`${item.title}${index}`}>
+                <NavigationMenuItem className="mr-5" key={`${item.title}${index}`}>
                   {item.content && item.content.length > 0 ? (
                     <NavigationMenuTrigger>
                       {item.target ? (
                         <Link
                           to={item.target}
-                          className="font-bold hover:text-red-400"
+                          className="hover:text-red-400"
                         >
                           {item.title}
                         </Link>
@@ -49,7 +50,7 @@ export default function Header() {
                     </NavigationMenuTrigger>
                   ) : (
                     <NavigationMenuLink
-                      className="font-bold hover:text-red-400"
+                      className="hover:text-red-400"
                       href={item.target}
                     >
                       {item.title}
@@ -76,10 +77,14 @@ export default function Header() {
             <li className="hidden lg:block">
               <SearchDialog />
             </li>
-            <li>
+            <li className="relative">
               <Link to={"/wishlist"}>
                 <Heart />
               </Link>
+              <NotificationBadge
+                count={3}
+                className="absolute top-[-10px] right-[-10px]"
+              />
             </li>
             <li className="hidden lg:block">
               <Popover>
@@ -98,8 +103,12 @@ export default function Header() {
                 </PopoverContent>
               </Popover>
             </li>
-            <li>
+            <li className="relative">
               <ShoppingSheet />
+              <NotificationBadge
+                count={2}
+                className="absolute top-[-10px] right-[-10px]"
+              />
             </li>
           </ul>
         </nav>

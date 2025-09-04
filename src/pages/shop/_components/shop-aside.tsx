@@ -1,0 +1,245 @@
+import MainSearch from "@/components/common/main-search";
+import { PriceFilter } from "@/components/common/price-filter";
+import { womenImage } from "@/utils/images";
+import { IoMdStar } from "react-icons/io";
+import { Link } from "react-router-dom";
+
+export default function ShopAside() {
+  return (
+    <aside className="w-full">
+      <MainSearch />
+      <div className="mb-10">
+        <PriceFilter />
+      </div>
+      <div className="mb-8">
+        <h5 className="text-xl mb-7">Product Categories</h5>
+        <ul className="flex flex-col gap-3">
+          <li className="hover:text-red-300 transition-all flex items-center justify-between">
+            <Link to={"/product-category/electronics/"}>Electronics</Link>
+            <span>(3)</span>
+          </li>
+          <li className="hover:text-red-300 transition-all flex items-center justify-between">
+            <Link to={"/product-category/jackets"}>Jackets</Link>
+            <span>(5)</span>
+          </li>
+          <li className="hover:text-red-300 transition-all flex items-center justify-between">
+            <Link to={"/product-category/man"}>Man</Link>
+            <span>(5)</span>
+          </li>
+          <li className="hover:text-red-300 transition-all flex items-center justify-between">
+            <Link to={"/product-category/pdf-books"}>PDF Books</Link>
+            <span>(5)</span>
+          </li>
+          <li className="hover:text-red-300 transition-all flex items-center justify-between">
+            <Link to={"/product-category/t-shirts"}>T-Shirts</Link>
+            <span>(5)</span>
+          </li>
+          <li className="hover:text-red-300 transition-all flex items-center justify-between">
+            <Link to={"/product-category/uncategorized"}>Uncategorized</Link>
+            <span>(0)</span>
+          </li>
+        </ul>
+      </div>
+      <div className="mb-12">
+        <h5 className="text-xl mb-8">Top rated products</h5>
+        <ul className="flex flex-col gap-5">
+          <li className="hover:text-red-300 transition-all border-b pb-2">
+            <Link to={"/category/business"} className="flex items-start gap-4">
+              <div className="w-[60px] h-[60px] overflow-hidden">
+                <img
+                  className="w-full h-full"
+                  src={womenImage}
+                  alt="women image"
+                />
+              </div>
+              <div className="flex-1 flex flex-col gap-1 items-start">
+                <span className="text-sm">Buck Butte Insulated</span>
+                <span className="flex items-center justify-center">
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                </span>
+                <span>$32.00.$30.00</span>
+              </div>
+            </Link>
+          </li>
+          <li className="hover:text-red-300 transition-all border-b pb-2">
+            <Link to={"/category/business"} className="flex items-start gap-4">
+              <div className="w-[60px] h-[60px] overflow-hidden">
+                <img
+                  className="w-full h-full"
+                  src={womenImage}
+                  alt="women image"
+                />
+              </div>
+              <div className="flex-1 flex flex-col gap-1 items-start">
+                <span className="text-sm">Buck Butte Insulated</span>
+                <span className="flex items-center justify-center">
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                </span>
+                <span>$32.00.$30.00</span>
+              </div>
+            </Link>
+          </li>
+          <li className="hover:text-red-300 transition-all border-b pb-2">
+            <Link to={"/category/business"} className="flex items-start gap-4">
+              <div className="w-[60px] h-[60px] overflow-hidden">
+                <img
+                  className="w-full h-full"
+                  src={womenImage}
+                  alt="women image"
+                />
+              </div>
+              <div className="flex-1 flex flex-col gap-1 items-start">
+                <span className="text-sm">Buck Butte Insulated</span>
+                <span className="flex items-center justify-center">
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                </span>
+                <span>$32.00.$30.00</span>
+              </div>
+            </Link>
+          </li>
+          <li className="hover:text-red-300 transition-all border-b pb-2">
+            <Link to={"/category/business"} className="flex items-start gap-4">
+              <div className="w-[60px] h-[60px] overflow-hidden">
+                <img
+                  className="w-full h-full"
+                  src={womenImage}
+                  alt="women image"
+                />
+              </div>
+              <div className="flex-1 flex flex-col gap-1 items-start">
+                <span className="text-sm">Buck Butte Insulated</span>
+                <span className="flex items-center justify-center">
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                </span>
+                <span>$32.00.$30.00</span>
+              </div>
+            </Link>
+          </li>
+          <li className="hover:text-red-300 transition-all border-b pb-2">
+            <Link to={"/category/business"} className="flex items-start gap-4">
+              <div className="w-[60px] h-[60px] overflow-hidden">
+                <img
+                  className="w-full h-full"
+                  src={womenImage}
+                  alt="women image"
+                />
+              </div>
+              <div className="flex-1 flex flex-col gap-1 items-start">
+                <span className="text-sm">Buck Butte Insulated</span>
+                <span className="flex items-center justify-center">
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                  <IoMdStar size={24} className="text-yellow-500" />
+                </span>
+                <span>$32.00.$30.00</span>
+              </div>
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h5 className="text-xl mb-6">Product tags</h5>
+        <ul className="flex items-center flex-wrap gap-2">
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              autumn
+            </Link>
+          </li>
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              Books
+            </Link>
+          </li>
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              fashion
+            </Link>
+          </li>
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              Finance
+            </Link>
+          </li>
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              Jacket
+            </Link>
+          </li>
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              Man
+            </Link>
+          </li>
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              Men
+            </Link>
+          </li>
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              summer
+            </Link>
+          </li>
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              T-Shirtd
+            </Link>
+          </li>
+          <li className="my-1">
+            <Link
+              to={"/"}
+              className="p-2 border hover:bg-rose-400 hover:text-white transition-all"
+            >
+              Winter
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  );
+}

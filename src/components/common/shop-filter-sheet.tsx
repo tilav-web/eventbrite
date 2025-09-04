@@ -1,5 +1,6 @@
 import { Funnel } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import ShopAside from "@/pages/shop/_components/shop-aside";
 
 export default function ShopFilterSheet() {
   return (
@@ -10,7 +11,9 @@ export default function ShopFilterSheet() {
           Filter
         </button>
       </SheetTrigger>
-      <SheetContent side='left'>Lorem, ipsum dolor.</SheetContent>
+      <SheetContent side="left" className="px-6 py-10 overflow-y-scroll">
+        <ShopAside />
+      </SheetContent>
     </Sheet>
   );
 }

@@ -52,7 +52,9 @@ export default function HeaderMenuSheet() {
             return (
               <li
                 key={item.title + index}
-                className={`border-b ${isOpen ? "h-auto" : "h-16"} transition-all duration-300`}
+                className={`border-b ${
+                  isOpen ? "h-auto" : "h-16"
+                } transition-all duration-300`}
               >
                 <div className="flex items-center justify-between h-16">
                   <Link

@@ -7,10 +7,12 @@ import womenImage from "@/assets/women-image.webp";
 import ipatImage from "@/assets/ipat-image.webp";
 import laptopImage from "@/assets/laptop.webp";
 import teamManImage from "@/assets/Testimonial-4.webp";
+import productImage from "@/assets/full.png";
 
 export {
   icon,
   mainImage1,
+  productImage,
   mainImage2,
   nikeImage,
   personImage,
