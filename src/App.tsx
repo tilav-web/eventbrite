@@ -9,6 +9,7 @@ import Shop from "./pages/shop/shop";
 import Login from "./pages/auth/login/login";
 import Register from "./pages/auth/register/register";
 import Wishlist from "./pages/wishlist/wishlist";
+import Product from "./pages/product/product";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/wishlist",
         element: <Wishlist />,
+      },
+      {
+        path: "/product/:target",
+        element: <Product />,
       },
     ],
   },

@@ -8,6 +8,7 @@ import ipatImage from "@/assets/ipat-image.webp";
 import laptopImage from "@/assets/laptop.webp";
 import teamManImage from "@/assets/Testimonial-4.webp";
 import productImage from "@/assets/full.png";
+import watchImage from "@/assets/watch-image.jpg";
 
 export {
   icon,
@@ -20,4 +21,5 @@ export {
   ipatImage,
   laptopImage,
   teamManImage,
+  watchImage,
 };

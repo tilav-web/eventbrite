@@ -2,6 +2,7 @@ import { personImage } from "@/utils/images";
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import { IoMdStar } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({
   width,
@@ -10,12 +11,16 @@ export default function ProductCard({
   width: string;
   height: string;
 }) {
+
+  const navigate = useNavigate()
+
   return (
     <motion.div
       className={`${width} cursor-pointer`}
       initial="rest"
       whileHover="hover"
       animate="rest"
+      onClick={() => navigate('/product/1')}
     >
       {/* Rasm */}
       <div className="relative">
