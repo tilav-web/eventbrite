@@ -30,10 +30,9 @@ export default function Product() {
   const [starChecked, setStarChecked] = useState<number>(0);
   const [activeImage, setActiveImage] = useState<number>(0);
 
-
   const handleImage = (index: number) => {
     setActiveImage(index);
-  }
+  };
 
   const images = [womenImage, ipatImage, laptopImage, teamManImage, watchImage];
 
@@ -97,12 +96,16 @@ export default function Product() {
         </div>
         <div className="flex items-stretch justify-between gap-8 p-4 mb-10 flex-col lg:flex-row">
           <div className="flex items-start gap-3 flex-col-reverse md:flex-row">
-            <div className="flex flex-row md:flex-col gap-2">
+            <div className="flex flex-row md:flex-col gap-2 overflow-auto max-w-full">
               {images.map((img, index) => {
                 return (
                   <button
                     key={index}
-                    className={`w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer ${index === activeImage ? 'ring-1 ring-offset-1 ring-black' : ''}`}
+                    className={`w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer ${
+                      index === activeImage
+                        ? "border border-black"
+                        : ""
+                    }`}
                     onClick={() => handleImage(index)}
                   >
                     <img
@@ -114,6 +117,7 @@ export default function Product() {
                 );
               })}
             </div>
+
             <div
               className="lg:w-[500px] lg:h-[500px] w-full md:h-[600px] bg-gray-200 group overflow-hidden cursor-pointer"
               onMouseMove={handleMove} // Kursor harakatini kuzatish

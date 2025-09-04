@@ -47,7 +47,7 @@ const mockData: WishlistItem[] = [
     dateAdded: "September 3, 2025",
     inStock: true,
   },
-   {
+  {
     id: "2",
     name: "11-inch Tablet Pro 2020 Space Gray",
     image: personImage,
@@ -88,7 +88,6 @@ export function WishlistTable() {
   return (
     <div className="w-full max-w-7xl mx-auto p-6">
       <h1 className="text-3xl font-semibold mb-6">Default wishlist</h1>
-
       <Table>
         <TableHeader>
           <TableRow>
@@ -144,10 +143,8 @@ export function WishlistTable() {
                   />
                 </div>
               </TableCell>
-              <TableCell className="border p-5">
-                <div className="flex items-center gap-3">
-                  <span className="font-medium">{item.name}</span>
-                </div>
+              <TableCell className="border p-5 font-medium">
+                {item.name}
               </TableCell>
               <TableCell className="border p-5">
                 <div className="flex items-center gap-2">
@@ -168,7 +165,7 @@ export function WishlistTable() {
               </TableCell>
               <TableCell className="border p-5">
                 <Button
-                  className="bg-purple-600 hover:bg-purple-700 text-white"
+                  className="bg-[#5817ad] rounded-full text-white"
                   size="sm"
                 >
                   Add to Cart
@@ -179,38 +176,40 @@ export function WishlistTable() {
         </TableBody>
       </Table>
 
-      <div className="flex items-center justify-between mt-6">
-        <div className="flex items-center gap-4">
-          <Select defaultValue="actions">
-            <SelectTrigger className="w-32">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="actions">Actions</SelectItem>
-              <SelectItem value="add-to-cart">Add to Cart</SelectItem>
-              <SelectItem value="remove">Remove</SelectItem>
-            </SelectContent>
-          </Select>
-          <Button
-            className="bg-purple-600 hover:bg-purple-700 text-white"
-            size="sm"
-          >
-            Apply Action
-          </Button>
-          <Button
-            className="bg-purple-600 hover:bg-purple-700 text-white"
-            size="sm"
-          >
-            Add Selected to Cart
-          </Button>
-          <Button
-            className="bg-purple-600 hover:bg-purple-700 text-white"
-            size="sm"
-          >
-            Add All to Cart
-          </Button>
+      <div className="flex items-center justify-between border-b border-r border-l p-4">
+        <div className="flex gap-4 justify-between w-full flex-col lg:flex-row items-start lg:items-center">
+          <div className="flex items-center gap-2 w-full">
+            <Select defaultValue="actions">
+              <SelectTrigger className="lg:w-48 bg-[#efefef] text-base rounded-none flex-1">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className="rounded-none">
+                <SelectItem className="rounded-none" value="actions">
+                  Actions
+                </SelectItem>
+                <SelectItem className="rounded-none" value="add-to-cart">
+                  Add to Cart
+                </SelectItem>
+                <SelectItem className="rounded-none" value="remove">
+                  Remove
+                </SelectItem>
+              </SelectContent>
+            </Select>
+            <Button className="bg-[#5817ad] rounded-full text-white" size="sm">
+              Apply Action
+            </Button>
+          </div>
+          <div className="flex md:items-center gap-2 flex-col md:flex-row w-full">
+            <Button className="bg-[#5817ad] rounded-full text-white" size="sm">
+              Add Selected to Cart
+            </Button>
+            <Button className="bg-[#5817ad] rounded-full text-white" size="sm">
+              Add All to Cart
+            </Button>
+          </div>
         </div>
-
+      </div>
+      <div className="flex items-center justify-end">
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-600">Share on</span>
           <div className="flex items-center gap-2">
