@@ -4,7 +4,13 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { watchImage } from "@/utils/images";
+import {
+  ipatImage,
+  laptopImage,
+  teamManImage,
+  watchImage,
+  womenImage,
+} from "@/utils/images";
 import { useRef, useState, type MouseEvent, type TouchEvent } from "react";
 import { IoIosArrowDropright } from "react-icons/io";
 import { IoIosArrowDropleft } from "react-icons/io";
@@ -22,6 +28,14 @@ import ProductCard from "@/components/common/product-card";
 export default function Product() {
   const imageRef = useRef<HTMLImageElement>(null);
   const [starChecked, setStarChecked] = useState<number>(0);
+  const [activeImage, setActiveImage] = useState<number>(0);
+
+
+  const handleImage = (index: number) => {
+    setActiveImage(index);
+  }
+
+  const images = [womenImage, ipatImage, laptopImage, teamManImage, watchImage];
 
   const handleMove = (
     e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>
@@ -49,6 +63,7 @@ export default function Product() {
 
     imageRef.current.style.transformOrigin = `${x}% ${y}%`; // Set transform origin
   };
+
   return (
     <div className="">
       <div className="max-w-[1200px] mx-auto p-4 pt-8">
@@ -83,27 +98,21 @@ export default function Product() {
         <div className="flex items-stretch justify-between gap-8 p-4 mb-10 flex-col lg:flex-row">
           <div className="flex items-start gap-3 flex-col-reverse md:flex-row">
             <div className="flex flex-row md:flex-col gap-2">
-              <button className="w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer">
-                <img
-                  className="w-full h-full object-cover"
-                  src={watchImage}
-                  alt="soat rasmi"
-                />
-              </button>
-              <button className="w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer">
-                <img
-                  className="w-full h-full object-cover"
-                  src={watchImage}
-                  alt="soat rasmi"
-                />
-              </button>
-              <button className="w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer">
-                <img
-                  className="w-full h-full object-cover"
-                  src={watchImage}
-                  alt="soat rasmi"
-                />
-              </button>
+              {images.map((img, index) => {
+                return (
+                  <button
+                    key={index}
+                    className={`w-[70px] h-[70px] md:w-[50px] md:h-[50px] overflow-hidden bg-white cursor-pointer ${index === activeImage ? 'ring-1 ring-offset-1 ring-black' : ''}`}
+                    onClick={() => handleImage(index)}
+                  >
+                    <img
+                      className="w-full h-full object-cover"
+                      src={img}
+                      alt="soat rasmi"
+                    />
+                  </button>
+                );
+              })}
             </div>
             <div
               className="lg:w-[500px] lg:h-[500px] w-full md:h-[600px] bg-gray-200 group overflow-hidden cursor-pointer"
@@ -112,7 +121,7 @@ export default function Product() {
               <img
                 ref={imageRef}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.8]" // Scale qiymati 1.3
-                src={watchImage}
+                src={images[activeImage]}
                 alt="soat rasmi"
               />
             </div>
