@@ -11,7 +11,10 @@ import Register from "./pages/auth/register/register";
 import Wishlist from "./pages/wishlist/wishlist";
 import Product from "./pages/product/product";
 import Cart from "./pages/cart/cart";
-import Profile from "./pages/profile/profile";
+import ProfileLayout from "./layouts/profile-layout";
+import { ProductOrders } from "./pages/profile/orders/orders";
+import ProfileDashboard from "./pages/profile/dashboard/dashboard";
+import { Profile } from "./pages/profile/profile";
 
 const router = createBrowserRouter([
   {
@@ -64,7 +67,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-account",
-        element: <Profile />,
+        element: <ProfileLayout />,
+        children: [
+          {
+            index: true,
+            element: <ProfileDashboard />,
+          },
+          {
+            path: "/my-account/account-details",
+            element: <Profile />,
+          },
+          {
+            path: "/my-account/orders",
+            element: <ProductOrders />,
+          },
+        ],
       },
     ],
   },
