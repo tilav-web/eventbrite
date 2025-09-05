@@ -9,6 +9,7 @@ import laptopImage from "@/assets/laptop.webp";
 import teamManImage from "@/assets/Testimonial-4.webp";
 import productImage from "@/assets/full.png";
 import watchImage from "@/assets/watch-image.jpg";
+import payPalImage from "@/assets/PayPal_logo.png";
 
 export {
   icon,
@@ -22,4 +23,5 @@ export {
   laptopImage,
   teamManImage,
   watchImage,
+  payPalImage,
 };
