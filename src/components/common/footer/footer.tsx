@@ -112,7 +112,7 @@ export default function Footer() {
         {/* Copyright Section */}
         <div className="border-t border-gray-200 mt-12 py-4">
           <p className="text-center text-sm text-gray-500">
-            Copyright © 2025 Made by Tilav
+            Copyright © 2025 Made by Tilav_web
           </p>
         </div>
       </div>
